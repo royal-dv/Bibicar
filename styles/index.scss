@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import 'vars';
+@import 'mixins.scss';
+
+html {
+  @include scrollbar();
+}
+
+body {
+  margin          : 0;
+  padding         : 0;
+  background-color: $grey-light;
+}
+
+html,
+input,
+button {
+  color      : $black;
+  font-family: 'Inter', sans-serif;
+}
+
+a {
+  outline        : none;
+  text-decoration: none;
+
+  &[href=''] {
+    pointer-events: none;
+  }
+
+  &:hover {
+    opacity: 0.75;
+  }
+}
+
+button {
+  cursor : pointer;
+  border : none;
+  outline: none;
+}
+
+.notifications-component {
+  top: 0 !important;
+}
+
+.ReactCollapse--collapse {
+  transition: height 500ms;
+}
+
+.d-none {
+  display: none;
+}
+
+.b-label {
+  color        : $grey-label;
+  display      : block;
+  margin-bottom: 8px;
+  @include font(14px, 500);
+}
+
+.b-row {
+  display  : flex;
+  flex-wrap: wrap;
+
+  &__no-wrap {
+    flex-wrap: nowrap;
+  }
+
+  &__negative {
+    margin: -12px -16px;
+  }
+
+  &__justify-end {
+    justify-content: flex-end;
+  }
+
+  &__justify-center {
+    justify-content: center;
+  }
+
+  &__justify-between {
+    justify-content: space-between;
+  }
+
+  &__align-end {
+    align-items: flex-end;
+  }
+
+  &__align-center {
+    align-items: center;
+  }
+}
+
+.b-col {
+  margin: 12px 16px;
+
+  &__1 {
+    width     : 100%;
+    flex-basis: 100%;
+  }
+
+  &__2 {
+    width     : 45%;
+    flex-basis: 45%;
+  }
+
+  &__3 {
+    width     : 29%;
+    flex-basis: 29%;
+  }
+
+  &__4 {
+    width     : 21%;
+    flex-basis: 21%;
+  }
+}
+
+.b-link {
+  color: $blue;
+  @include font(14px, 600);
+}
+
+.b-spacer {
+  &__1 {
+    height: $spacer;
+  }
+
+  &__2 {
+    height: $spacer * 2;
+  }
+
+  &__3 {
+    height: $spacer * 3;
+  }
+
+  &__4 {
+    height: $spacer * 4;
+  }
+
+  &__5 {
+    height: $spacer * 5;
+  }
+}
+
+.m {
+  &-0 {
+    margin: 0;
+  }
+}
+
+.mr {
+  &-1 {
+    margin-right: $spacer;
+  }
+
+  &-2 {
+    margin-right: $spacer * 2;
+  }
+
+  &-3 {
+    margin-right: $spacer * 3;
+  }
+
+  &-auto {
+    margin-right: auto;
+  }
+}
+
+.ml {
+  &-1 {
+    margin-left: $spacer;
+  }
+
+  &-2 {
+    margin-left: $spacer * 2;
+  }
+
+  &-3 {
+    margin-left: $spacer * 3;
+  }
+
+  &-auto {
+    margin-left: auto;
+  }
+}
+
+.nowrap-text {
+  white-space: nowrap;
+}
+
+.inverted {
+  transform: scale(1, -1);
+}
+
+.animated {
+  transition: 0.4s;
+}
