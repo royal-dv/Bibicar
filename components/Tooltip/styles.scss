@@ -1,0 +1,136 @@
+@import "../../styles/vars";
+@import "../../styles/mixins";
+
+.b-tooltip {
+  display : inline-block;
+  position: relative;
+
+  &:hover {
+    .b-tooltip__container {
+      opacity   : 1;
+      visibility: visible;
+    }
+  }
+
+  &__container {
+    color     : #fff;
+    z-index   : 6;
+    opacity   : 0;
+    position  : absolute;
+    text-align: center;
+    visibility: hidden;
+    transition: opacity 0.3s;
+  }
+
+  &__text {
+    color        : white;
+    padding      : 8px 26px;
+    white-space  : nowrap;
+    border-radius: 40px;
+    @include font(18px, 700);
+
+    &:after {
+      content       : '';
+      position      : absolute;
+      border-style  : solid;
+      border-width  : 8px;
+      pointer-events: none;
+    }
+  }
+
+  &--green {
+    .b-tooltip__text {
+      background: $green;
+
+      &::after {
+        border-color: transparent transparent transparent $green;
+      }
+    }
+  }
+
+  &--blue {
+    .b-tooltip__text {
+      background: $blue;
+
+      &::after {
+        border-color: transparent transparent transparent $blue;
+      }
+    }
+  }
+
+  &--red {
+    .b-tooltip__text {
+      background: $red;
+
+      &::after {
+        border-color: transparent transparent transparent $red;
+      }
+    }
+  }
+
+  &--grey,
+  &--default {
+    .b-tooltip__text {
+      background: $grey;
+
+      &::after {
+        border-color: transparent transparent transparent $grey;
+      }
+    }
+  }
+
+  &--left {
+    .b-tooltip__container {
+      top   : -2px;
+      right : 128%;
+      bottom: auto;
+    }
+
+    .b-tooltip__text::after {
+      top       : 43%;
+      left      : 99%;
+      margin-top: -5px;
+    }
+  }
+
+  &--top {
+    .b-tooltip__container {
+      left     : 50%;
+      bottom   : 55px;
+      transform: translate(-50%, 50%);
+    }
+
+    .b-tooltip__text::after {
+      left     : 50%;
+      bottom   : -8px;
+      transform: rotate(90deg) translate(50%, 50%);
+    }
+  }
+
+  &--right {
+    .b-tooltip__container {
+      top : -5px;
+      left: 133%;
+    }
+
+    .b-tooltip__text::after {
+      top       : 45%;
+      right     : 99%;
+      margin-top: -5px;
+    }
+  }
+
+  &--bottom {
+    .b-tooltip__container {
+      top        : 125%;
+      left       : -94%;
+      margin-left: -60px;
+    }
+
+    .b-tooltip__text::after {
+      left       : 50%;
+      bottom     : 100%;
+      margin-left: -5px;
+    }
+  }
+}
