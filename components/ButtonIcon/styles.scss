@@ -1,0 +1,75 @@
+@import "../../styles/vars";
+@import "../../styles/mixins";
+
+.b-icon-button {
+  width          : 32px;
+  height         : 32px;
+  display        : flex;
+  position       : relative;
+  transition     : 0.4s;
+  align-items    : center;
+  border-radius  : 12px;
+  justify-content: center;
+
+  &:disabled {
+    opacity       : 0.5;
+    pointer-events: none;
+  }
+
+  &--transparent {
+    background-color: transparent;
+
+    &:hover {
+      background-color: #dadada;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 6px rgba(218, 218, 218, 0.5);
+    }
+  }
+
+  &--default {
+    background-color: $grey-light;
+
+    &:hover {
+      background-color: #dadada;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 6px rgba(218, 218, 218, 0.5);
+    }
+  }
+
+  &--primary {
+    background-color: $blue;
+
+    &:hover {
+      background-color: $blue-dark;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 6px #e0f1fb;
+    }
+  }
+
+  &--danger {
+    background-color: $red;
+
+    &:hover {
+      background-color: $red-dark;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 6px $red-light;
+    }
+  }
+
+  &--fullWidth {
+    width: 100% !important;
+  }
+
+  &__icon {
+    width : 16px;
+    height: 16px;
+  }
+}
