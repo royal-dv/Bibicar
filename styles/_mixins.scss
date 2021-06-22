@@ -1,0 +1,57 @@
+@mixin font($size, $weight:false, $height:false) {
+  $size-in-rem: $size / 16px * 1rem;
+
+  font-size  : $size-in-rem;
+  font-family: 'Inter', sans-serif;
+
+  @if $height {
+    line-height: ($height / $size) * $size-in-rem;
+  }
+
+  @if $weight {
+    font-weight: $weight;
+  }
+}
+
+@mixin scrollbar($color: #2295F2, $hidden: false) {
+  scrollbar-color: $color transparent;
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    width           : 8px;
+    height          : 8px;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius   : 10px;
+    background-color: $color;
+  }
+
+  @if $hidden {
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      width : 0;
+      height: 0;
+    }
+  }
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &:-moz-placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
