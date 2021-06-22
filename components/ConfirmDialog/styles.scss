@@ -1,0 +1,15 @@
+@import "../../styles/vars";
+@import "../../styles/mixins";
+
+.b-dialog {
+  &__text {
+    @include font(18px, 600);
+    text-align: center;
+  }
+
+  &.b-modal__container {
+    width        : 400px;
+    min-width    : 400px;
+    border-radius: 28px;
+  }
+}
