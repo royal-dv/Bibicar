@@ -1,0 +1,66 @@
+@import "../../styles/vars";
+@import "../../styles/mixins";
+
+.b-toggle {
+  display: inline-block;
+
+  &__checkbox {
+    display: none;
+  }
+
+  &__label {
+    width        : 64px;
+    height       : 32px;
+    cursor       : pointer;
+    display      : block;
+    position     : relative;
+    background   : $grey-back;
+    transition   : background 0.3s ease-in 0s;
+    border-radius: 40px;
+
+    &:hover {
+      background: $grey-text;
+    }
+  }
+
+  &__switch {
+    top          : 0;
+    right        : 34px;
+    bottom       : 0;
+    width        : 24px;
+    height       : 26px;
+    margin       : 3px;
+    display      : block;
+    position     : absolute;
+    background   : #f7f7fc;
+    transition   : all 0.25s ease-in 0s;
+    border-radius: 50%;
+  }
+
+  &__checkbox:not(:checked)+.b-toggle__label--focused {
+    outline   : none;
+    box-shadow: 0 0 0 5px $grey-light;
+  }
+
+  &__checkbox:checked+.b-toggle__label--focused {
+    outline   : none;
+    box-shadow: 0 0 0 5px #e0f1fb;
+  }
+
+  &__checkbox:checked+.b-toggle__label {
+    background: $blue;
+
+    &:hover {
+      background: #1b84d9;
+    }
+
+    .b-toggle__switch {
+      right: 0px;
+    }
+  }
+
+  &__checkbox:disabled+.b-toggle__label {
+    pointer-events  : none;
+    background-color: $grey;
+  }
+}
