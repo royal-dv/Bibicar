@@ -1,0 +1,21 @@
+@import '../../styles/vars';
+@import '../../styles/mixins';
+
+.b-avatar {
+  width        : 80px;
+  height       : 80px;
+  border-radius: 50%;
+
+  &--empty {
+    display         : flex;
+    min-width       : 80px;
+    align-items     : center;
+    justify-content : center;
+    background-color: $grey-light;
+
+    img {
+      width : 30px;
+      height: 30px;
+    }
+  }
+}
