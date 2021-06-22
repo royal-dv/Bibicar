@@ -1,0 +1,48 @@
+@import "../../styles/vars";
+@import "../../styles/mixins";
+
+.b-arrow-button {
+  color           : $grey-light;
+  width           : 55px;
+  height          : 40px;
+  border          : 2px solid $blue;
+  display         : flex;
+  padding         : 8px;
+  position        : relative;
+  transition      : 0.4s;
+  align-items     : center;
+  border-radius   : 12px;
+  justify-content : center;
+  background-color: transparent;
+
+  &:hover {
+    color : $blue-dark;
+    border: 2px solid $blue-dark;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 6px #e0f1fb;
+  }
+
+  &:disabled {
+    opacity       : 0.5;
+    pointer-events: none;
+  }
+
+  &--fullWidth {
+    width: 100% !important;
+  }
+
+  &__icon {
+    width : 19px;
+    height: 8px;
+
+    &:hover {
+      color: $blue-dark;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 6px #e0f1fb;
+    }
+  }
+}
