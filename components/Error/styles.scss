@@ -1,0 +1,19 @@
+@import "../../styles/vars";
+@import "../../styles/mixins";
+
+.b-error {
+  &__container {
+    border       : 2px solid $error-border;
+    padding      : 16px;
+    background   : $error-background;
+    border-radius: 16px;
+    margin-bottom: 16px;
+  }
+
+  &__label {
+    color     : $error-label;
+    position  : absolute;
+    margin-top: 8px;
+    @include font(14px, 500);
+  }
+}
