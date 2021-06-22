@@ -1,0 +1,40 @@
+@import "../../styles/vars";
+@import "../../styles/mixins";
+
+.b-tag {
+  display: flex;
+
+  &--yellow .b-tag__container {
+    background: $yellow;
+  }
+
+  &--grey .b-tag__container {
+    background: #ededed;
+  }
+
+  &--blue {
+    .b-tag__label {
+      color: $blue;
+    }
+
+    .b-tag__container {
+      background: #d3eafc;
+    }
+  }
+
+  &--red {
+    .b-tag__label {
+      color: $light;
+    }
+
+    .b-tag__container {
+      background: #ff6b6b;
+    }
+  }
+
+  &__container {
+    padding      : 7px 10px;
+    border-radius: 10px;
+    @include font(12px, 600);
+  }
+}
