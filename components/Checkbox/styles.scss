@@ -1,0 +1,76 @@
+@import '../../styles/vars';
+@import '../../styles/mixins';
+
+.b-checkbox {
+  display: flex;
+
+  &--error {
+    .b-checkbox__input+label {
+      color: $error-label;
+      &::before {
+        background-color: $error-background;
+      }
+    }
+  }
+
+  &__input {
+    opacity : 0;
+    z-index : -1;
+    position: absolute;
+
+    &+label {
+      display    : inline-flex;
+      align-items: center;
+      user-select: none;
+    }
+
+    &+label::before {
+      width              : 24px;
+      height             : 24px;
+      border             : none;
+      content            : '';
+      display            : inline-block;
+      flex-grow          : 0;
+      transition         : 0.4s;
+      flex-shrink        : 0;
+      margin-right       : 16px;
+      border-radius      : 0.25em;
+      background-size    : 50% 50%;
+      background-color   : $grey-back;
+      background-repeat  : no-repeat;
+      background-position: center center;
+    }
+
+    &[type='radio']+label::before {
+      border-radius: 50%;
+    }
+
+    &:focus+label::before,
+    &:focus:not(:checked)+label::before,
+    &:not(:disabled):not(:checked)+label:hover::before {
+      box-shadow: 0 0 0 0.2rem $blue-light;
+    }
+
+    &:not(:disabled):active+label::before {
+      background-color: $blue-light;
+    }
+
+    &:checked+label::before {
+      background-color: $blue;
+      background-image: url('../../icons/checkmark.svg');
+    }
+
+    &:disabled+label {
+      color: $grey;
+    }
+
+    &:disabled+label::before {
+      background-color: $grey;
+    }
+  }
+
+  &__label {
+    color: $black-border;
+    @include font(16px, 500);
+  }
+}
