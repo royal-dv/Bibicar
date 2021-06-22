@@ -1,0 +1,65 @@
+@import "../../styles/vars";
+@import "../../styles/mixins";
+
+.b-login {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(
+    80.81deg,
+    #276bde 5.28%,
+    #275cde 13.24%,
+    #2796de 21.19%
+  );
+
+  &__container {
+    margin: 0 auto;
+    display: flex;
+    max-width: 338px;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__forget {
+    margin-top: 20px;
+  }
+
+  &__circle {
+    position: absolute;
+    border-radius: 50%;
+
+    &--blue {
+      left: -16%;
+      width: calc(100vw * 1.7);
+      height: calc(100vw * 1.7);
+      bottom: -30%;
+      background: linear-gradient(
+        261.19deg,
+        #d3e8ff 45.75%,
+        rgba(159, 205, 255, 0.92) 89.48%
+      );
+    }
+
+    &--white {
+      left: -15%;
+      width: calc(100vw * 1.5);
+      height: calc(100vw * 1.5);
+      bottom: 5%;
+      background: white;
+    }
+  }
+}
+
+.b-logo {
+  height: 155px;
+  margin: 150px 0;
+  z-index: 1;
+}
+
+.b-label__text {
+  margin: 0 0 12px;
+  @include font(14px, 500);
+  font-weight: 500;
+  font-size: 14px;
+  color: $grey-label;
+}
